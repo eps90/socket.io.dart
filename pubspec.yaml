@@ -1,3 +1,5 @@
 name: socket.io.dart
 version: 0.0.1
 description: Port of awesome socket.io library in Dart
+dependencies:
+  logging: ">=0.10.0"
