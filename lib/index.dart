@@ -2,6 +2,7 @@ library socket.io.dart;
 
 import 'dart:io';
 import 'package:logging/logging.dart';
+import './client.dart';
 
 /**
  * Module dependencies.
@@ -56,14 +57,6 @@ class Engine {
     on(String event, Function handler) {}
     close() {}
 }
-
-/**
- * @todo to remove when client will be migrated
- */
-class Client {
-    Client(server, connection);
-}
-
 
 class Server {
     // Namespaces
@@ -362,7 +355,7 @@ class Server {
      */
     bind(engine){
         this.engine = engine;
-        this.engine.on('connection', this.onconnection.bind(this));
+        this.engine.on('connection', this.onconnection);
         return this;
     }
 
@@ -375,7 +368,7 @@ class Server {
      */
     onconnection(conn){
         _logger.info('incoming connection with id ${conn.id}');
-        var client = new Client(this, conn);
+        Client client = new Client(this, conn);
         client.connect('/');
         return this;
     }
