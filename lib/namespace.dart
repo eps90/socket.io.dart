@@ -1,9 +1,4 @@
-library socket.io.dart.namespace;
-
-import 'package:logging/logging.dart';
-import './server.dart';
-import './client.dart';
-
+part of socket.io;
 
 /**
  * Module dependencies.
