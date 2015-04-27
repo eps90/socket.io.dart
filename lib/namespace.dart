@@ -1,7 +1,7 @@
 library socket.io.dart.namespace;
 
 import 'package:logging/logging.dart';
-import './index.dart';
+import './server.dart';
 import './client.dart';
 
 
